@@ -1,6 +1,6 @@
 # 60-Base Clock
 
-<video src="https://raw.githubusercontent.com/BarryYangi/clock/main/public/clock.mov" controls width="100%"></video>
+![Demo](./public/clock.gif)
 
 A digital clock visualization project based on the sexagesimal (60-base) time system.
 
