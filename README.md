@@ -58,10 +58,6 @@ You can also deploy the project to a server and use the public URL in OBS, so yo
 - [Tailwind CSS](https://tailwindcss.com) - Styling framework
 - MonoLisa font - Monospace number display
 
-## Known Issues
-
-- The version with jumping seconds may run 1 second faster than real-world time (recorded, pending fix)
-
 ## License
 
 MIT
