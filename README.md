@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 60-Base Clock
 
-## Getting Started
+[Demo Video](/public/clock.mov)
 
-First, run the development server:
+A digital clock visualization project based on the sexagesimal (60-base) time system.
+
+## Design Concept
+
+Time is a sexagesimal measurement system: 60 seconds, 60 minutes, 24 hours. Therefore, only 60 numbers are needed to fully express all time.
+
+This clock displays all numbers from 01 to 60 in a 5-column × 12-row grid format, using different visual markers to represent the current time:
+
+- **Hours**: Marked with square brackets `[HH]`, with an upper limit of 24
+- **Minutes**: Highlighted for quick recognition of the current minute within the hour
+- **Seconds**: Marked with an underline, jumping every second to display the current second in real-time
+
+## Features
+
+- Real-time display of current time (hours, minutes, seconds)
+- 60-number grid layout (5 columns × 12 rows)
+- Seconds marked with underline, jumping in real-time every second
+- Responsive design, adapting to different screen sizes
+- Uses MonoLisa monospace font to ensure number alignment
+
+## Usage
+
+### Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## OBS Usage
 
-To learn more about Next.js, take a look at the following resources:
+This clock can be easily imported into OBS Studio:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Add a "Browser Source" in OBS
+2. Enter the local development address (e.g., `http://localhost:3000`) or the deployed URL
+3. Set appropriate width and height (recommended to maintain original aspect ratio)
+4. Check "Refresh browser when scene becomes active" to keep time synchronized
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can also deploy the project to a server and use the public URL in OBS, so you don't need to run it locally.
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js](https://nextjs.org) - React framework
+- [TypeScript](https://www.typescriptlang.org) - Type safety
+- [Tailwind CSS](https://tailwindcss.com) - Styling framework
+- MonoLisa font - Monospace number display
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Known Issues
+
+- The version with jumping seconds may run 1 second faster than real-world time (recorded, pending fix)
+
+## License
+
+MIT
